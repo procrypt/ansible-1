@@ -1,0 +1,71 @@
+---
+- name: Update system and required packages
+  block:
+    - apt: 
+        update_cache: yes
+
+    - name: Install Software for Computer Networks Lab
+      apt:
+        pkg: "{{ item }}"
+        state: present
+      with_items:
+        - scapy
+        - autoconf 
+        - automake 
+        - traceroute
+        - autotools-dev 
+        - libtool 
+        - pkg-config
+        - tree  
+        - libjson-c-dev
+        - flex
+        - libpython-dev
+        - libreadline-dev
+        - libc-ares-dev
+        - bison
+        - python-sphinx
+        - iptables
+        - texinfo
+        - install-info
+        - wireshark
+        - ebtables
+        - ufw
+        - nmap
+        - ftp
+        - isc-dhcp-server
+        - ntp
+        - vim
+        - iperf
+        - iperf3
+        - echoping
+        - tftp
+        - telnet
+        - mate-desktop-environment-extras 
+        - mate-themes
+        - lightdm 
+        - lightdm-gtk-greeter 
+        - update-manager
+        - git
+        - autoconf
+        - automake
+        - libtool
+        - make
+        - gawk
+        - libreadline-dev 
+        - texinfo 
+        - dejagnu
+        - pkg-config 
+        - libpam0g-dev 
+        - libjson-c-dev 
+        - bison 
+        - flex 
+        - python-pytest
+        - libc-ares-dev 
+        - python3-dev 
+        - libsystemd-dev 
+        - python-ipaddr 
+        - python3-sphinx
+        - install-info
+
+      notify: Enable lightdm
+  become: true        
